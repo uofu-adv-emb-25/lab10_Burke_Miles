@@ -15,25 +15,24 @@
 
 int count = 0;
 bool on = false;
+const uint LED_PIN = 2;
 
 #define MAIN_TASK_PRIORITY      ( tskIDLE_PRIORITY + 1UL )
 #define BLINK_TASK_PRIORITY     ( tskIDLE_PRIORITY + 2UL )
 #define MAIN_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
 #define BLINK_TASK_STACK_SIZE configMINIMAL_STACK_SIZE
 
-void blink_task(__unused void *params) {
+void main_task(__unused void *params) 
+{
     hard_assert(cyw43_arch_init() == PICO_OK);
+
+    cyw43_arch_gpio_init(LED_PIN);
+    cyw43_arch_gpio_set_dir(LED_PIN, GPIO_OUT);
     while (true) {
-        cyw43_arch_gpio_put(2, on);
+        cyw43_arch_gpio_put(LED_PIN, on);
         if (count++ % 11) on = !on;
         vTaskDelay(500);
     }
-}
-
-void main_task(__unused void *params) 
-{
-    xTaskCreate(blink_task, "BlinkThread",
-                BLINK_TASK_STACK_SIZE, NULL, BLINK_TASK_PRIORITY, NULL);
 }
 
 int main( void )
