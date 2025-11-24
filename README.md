@@ -8,4 +8,6 @@ SLEEP_EN1 = 0x3FFF
 ENABLED0 = 0x0000
 ENABLED1 = 0x0000
 
-
+## Activity 2
+VSYS to GND: 4.98 V, 2 mA
+ 
