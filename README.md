@@ -1,1 +1,11 @@
-# lab10_Burke_Miles
+## Activity 1
+WAKE_EN0 = 0xFFFF
+WAKE_EN1 = 0x3FFF
+
+SLEEP_EN0 = 0xFFFF
+SLEEP_EN1 = 0x3FFF
+
+ENABLED0 = 0x0000
+ENABLED1 = 0x0000
+
+
