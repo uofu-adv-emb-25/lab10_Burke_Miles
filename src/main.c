@@ -26,8 +26,10 @@ void main_task(__unused void *params)
 {
     hard_assert(cyw43_arch_init() == PICO_OK);
 
+    gpio_init(LED_PIN);
+    gpio_set_dir(LED_PIN, GPIO_OUT);
     while (true) {
-        cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, on);
+        cyw43_arch_gpio_put(LED_PIN, on);
         if (count++ % 11) on = !on;
         vTaskDelay(500);
     }
