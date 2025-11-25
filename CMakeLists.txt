@@ -43,10 +43,13 @@ include(${PICO_SDK_PATH}/pico_sdk_init.cmake)
 # This imports the library configuration for FreeRTOS
 include(${FREERTOS_PATH}/portable/ThirdParty/GCC/RP2040/FreeRTOS_Kernel_import.cmake)
 
+set(PICO_EXTRAS_PATH "${CMAKE_CURRENT_LIST_DIR}/lib/pico-extras")
 # This sets up the unity library. They don't provide a library export, so it's defined locally.
 include(unity.cmake)
 # We also need PICO EXTRAS
-include(lib/pico-extras/pico_sdk_import.cmake)
+include(pico_sdk_import.cmake)
+# Pull in pico-extras
+include(pico_extras_import.cmake)
 
 # This defines your project name, you can name it anything you want.
 project(myproject C CXX ASM)

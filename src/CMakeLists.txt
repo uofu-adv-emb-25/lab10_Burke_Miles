@@ -18,7 +18,9 @@ target_link_libraries(${execName} PRIVATE
   pico_stdlib
   pico_multicore
   pico_async_context_freertos
-  
+  hardware_sleep
+  hardware_rosc
+  pico_aon_timer
   FreeRTOS-Kernel-Heap4
 )
 
