@@ -21,4 +21,6 @@ blink_irq:
     -10KHz: ~.1 Watts at 5V drawing 24 mA
     -100KHz: ~.1 Watts at 5V drawing 24 mA
     -1MHz: ~.1 Watts at 5V drawing 22 mA
- 
+
+hello alarm behavior: Watched powervsource go from 16mA current draw to 0mA and then back to 16mA indicating proper sleep cycle behavior
+hello dormant behavior: Let Pi go to sleep and then woke up with wave gen. This correctly follows what we are expecting.
