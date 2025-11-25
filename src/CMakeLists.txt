@@ -2,7 +2,7 @@
 set(execName "lab10")
 
 add_executable(${execName}
-    main.c
+    blink_irq.c
     )
 
 pico_set_program_name(${execName} "test")
@@ -18,6 +18,7 @@ target_link_libraries(${execName} PRIVATE
   pico_stdlib
   pico_multicore
   pico_async_context_freertos
+  
   FreeRTOS-Kernel-Heap4
 )
 
